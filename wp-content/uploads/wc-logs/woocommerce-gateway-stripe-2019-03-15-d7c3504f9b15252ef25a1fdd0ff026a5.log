@@ -1,0 +1,223 @@
+2019-03-15T00:23:50+00:00 DEBUG 
+====Stripe Version: 4.1.15====
+====Start Log====
+Error: Unable to verify domain - missing secret key.
+====End Log====
+
+
+2019-03-15T00:24:11+00:00 DEBUG 
+====Stripe Version: 4.1.15====
+====Start Log====
+Error: Unable to verify domain - missing secret key.
+====End Log====
+
+
+2019-03-15T00:27:46+00:00 DEBUG 
+====Stripe Version: 4.1.15====
+====Start Log====
+Your domain has been verified with Apple Pay!
+====End Log====
+
+
+2019-03-15T00:29:08+00:00 DEBUG 
+====Stripe Version: 4.1.15====
+====Start Log====
+sources/src_1EE3v3JiOSflnrFG9wjztIQt
+====End Log====
+
+
+2019-03-15T00:29:09+00:00 DEBUG 
+====Stripe Version: 4.1.15====
+====Start Log====
+Info: Begin processing payment for order 25 for the amount of 11500.00
+====End Log====
+
+
+2019-03-15T00:29:09+00:00 DEBUG 
+====Stripe Version: 4.1.15====
+====Start Log====
+charges request: Array
+(
+    [currency] => usd
+    [amount] => 1150000
+    [description] => HomeGoods - Order 25
+    [capture] => true
+    [expand[]] => balance_transaction
+    [metadata] => Array
+        (
+            [customer_name] => test test
+            [customer_email] => kevinma91@yahoo.com
+            [order_id] => 25
+        )
+
+    [source] => src_1EE3v3JiOSflnrFG9wjztIQt
+)
+
+====End Log====
+
+
+2019-03-15T00:29:09+00:00 DEBUG 
+====Stripe Version: 4.1.15====
+====Start Log====
+Processing response: stdClass Object
+(
+    [id] => ch_1EE3v5JiOSflnrFGIS7DMdsl
+    [object] => charge
+    [amount] => 1150000
+    [amount_refunded] => 0
+    [application] => 
+    [application_fee] => 
+    [application_fee_amount] => 
+    [balance_transaction] => stdClass Object
+        (
+            [id] => txn_1EE3v5JiOSflnrFGaAzIDPer
+            [object] => balance_transaction
+            [amount] => 1150000
+            [available_on] => 1553212800
+            [created] => 1552609747
+            [currency] => usd
+            [description] => HomeGoods - Order 25
+            [exchange_rate] => 
+            [fee] => 33380
+            [fee_details] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [amount] => 33380
+                            [application] => 
+                            [currency] => usd
+                            [description] => Stripe processing fees
+                            [type] => stripe_fee
+                        )
+
+                )
+
+            [net] => 1116620
+            [source] => ch_1EE3v5JiOSflnrFGIS7DMdsl
+            [status] => pending
+            [type] => charge
+        )
+
+    [captured] => 1
+    [created] => 1552609747
+    [currency] => usd
+    [customer] => 
+    [description] => HomeGoods - Order 25
+    [destination] => 
+    [dispute] => 
+    [failure_code] => 
+    [failure_message] => 
+    [fraud_details] => stdClass Object
+        (
+        )
+
+    [invoice] => 
+    [livemode] => 
+    [metadata] => stdClass Object
+        (
+            [customer_name] => test test
+            [customer_email] => kevinma91@yahoo.com
+            [order_id] => 25
+        )
+
+    [on_behalf_of] => 
+    [order] => 
+    [outcome] => stdClass Object
+        (
+            [network_status] => approved_by_network
+            [reason] => 
+            [risk_level] => normal
+            [risk_score] => 37
+            [seller_message] => Payment complete.
+            [type] => authorized
+        )
+
+    [paid] => 1
+    [payment_intent] => 
+    [receipt_email] => 
+    [receipt_number] => 
+    [receipt_url] => https://pay.stripe.com/receipts/acct_1BKEJ9JiOSflnrFG/ch_1EE3v5JiOSflnrFGIS7DMdsl/rcpt_EhSqF64eFWzwT6SYjZXHsHN05u3u1kM
+    [refunded] => 
+    [refunds] => stdClass Object
+        (
+            [object] => list
+            [data] => Array
+                (
+                )
+
+            [has_more] => 
+            [total_count] => 0
+            [url] => /v1/charges/ch_1EE3v5JiOSflnrFGIS7DMdsl/refunds
+        )
+
+    [review] => 
+    [shipping] => 
+    [source] => stdClass Object
+        (
+            [id] => src_1EE3v3JiOSflnrFG9wjztIQt
+            [object] => source
+            [amount] => 
+            [card] => stdClass Object
+                (
+                    [exp_month] => 11
+                    [exp_year] => 2020
+                    [last4] => 4242
+                    [country] => US
+                    [brand] => Visa
+                    [address_line1_check] => pass
+                    [address_zip_check] => pass
+                    [cvc_check] => pass
+                    [funding] => credit
+                    [fingerprint] => ydvUsHjP8gMvJnWx
+                    [three_d_secure] => optional
+                    [name] => 
+                    [tokenization_method] => 
+                    [dynamic_last4] => 
+                )
+
+            [client_secret] => src_client_secret_EhSqPwK4bDZF8DA2QrKXWlfv
+            [created] => 1552609747
+            [currency] => 
+            [flow] => none
+            [livemode] => 
+            [metadata] => stdClass Object
+                (
+                )
+
+            [owner] => stdClass Object
+                (
+                    [address] => stdClass Object
+                        (
+                            [city] => alhambra
+                            [country] => US
+                            [line1] => 1701 S Atlantic Blvd
+                            [line2] => Apt M
+                            [postal_code] => 91803
+                            [state] => CA
+                        )
+
+                    [email] => kevinma91@yahoo.com
+                    [name] => test test
+                    [phone] => 16262712771
+                    [verified_address] => 
+                    [verified_email] => 
+                    [verified_name] => 
+                    [verified_phone] => 
+                )
+
+            [statement_descriptor] => 
+            [status] => consumed
+            [type] => card
+            [usage] => reusable
+        )
+
+    [source_transfer] => 
+    [statement_descriptor] => 
+    [status] => succeeded
+    [transfer_data] => 
+    [transfer_group] => 
+)
+
+====End Log====
+
+
