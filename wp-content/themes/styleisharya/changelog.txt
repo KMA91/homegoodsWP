@@ -1,0 +1,28 @@
+version : 0.1
+1) Launched this version
+
+version : 0.2
+1) changed banner images, colors, fashion images.
+2) Updated their license
+3) Updated Screenshot too.
+
+version : 0.3
+1) REQUIRED: The pingback url should be conditional, since it can be turned off. Example from Twenty Sixteen Theme: 
+that issue has been solved.
+2) Single page Sidbar space issue solved.
+3) changing color from orange to black for single and archiev list done.
+
+version : 0.4
+1) updated screenshot
+
+version : 0.5
+1) updated screenshot
+
+version : 0.6
+1) updated description
+2) updated compatible version
+
+version : 1.0
+1) Updated shop page screen
+2) updated licence URL
+3) Updated Description
