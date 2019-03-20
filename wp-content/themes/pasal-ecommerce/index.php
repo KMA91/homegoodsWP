@@ -13,73 +13,30 @@
  */
 
 get_header();
-$pasal_ecommerce_settings = pasal_ecommerce_get_theme_options();
-$check_sidebar = $pasal_ecommerce_settings['pasal_ecommerce_sidebar_display'];
-$sidebar_status = $pasal_ecommerce_settings['pasal_ecommerce_sidebar_status'];
-$col = pasal_ecommerce_check_sidebar();
-$content_col = 12 - $col;
-if(($sidebar_status == 'hide-sidebar'))
-    $content_col = 12;
+$upload_dir = wp_upload_dir();
 ?>
-    <div class="sec-content section">
-        <div class="container">
-            <div class="row">
-                <?php
-                if ($col != 12) {
-                    if (in_array('layout-pro/layout-pro.php', apply_filters('active_plugins', get_option('active_plugins'))) && is_active_sidebar('layout_pro_left_sidebar')  && ($sidebar_status == 'show-sidebar') ) {
-                        echo '<div class="col-md-4">';
-                        dynamic_sidebar('layout_pro_left_sidebar');
-                        echo '</div>';
-                    }
-                }
-                ?>
-                <div class="col-md-<?php echo esc_attr($content_col); ?>">
-                    <main id="main" class="site-main">
-
-                        <?php
-                        if (have_posts()) :
-
-                            if (is_home() && !is_front_page()) : ?>
-                                <header>
-                                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                                </header>
-
-                                <?php
-                            endif;
-
-                            /* Start the Loop */
-                            while (have_posts()) : the_post();
-
-                                /*
-                                 * Include the Post-Format-specific template for the content.
-                                 * If you want to override this in a child theme, then include a file
-                                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                                 */
-                                get_template_part('template-parts/content', get_post_format());
-
-                            endwhile;
-
-                            the_posts_navigation();
-
-                        else :
-
-                            get_template_part('template-parts/content', 'none');
-
-                        endif; ?>
-
-                    </main><!-- #main -->
-                </div>
-                <?php
-                if ($col != 12) {
-                    if (is_active_sidebar('pasal_ecommerce_main_sidebar')  && ($sidebar_status == 'show-sidebar') ) {
-                        echo '<div class="col-md-4">';
-                        dynamic_sidebar('pasal_ecommerce_main_sidebar');
-                        echo '</div>';
-                    }
-                }
-                ?>
-            </div>
-        </div>
+<div class="container-fluid" style='padding: 0;'>
+  <div class="jumbotron">
+    <div class="jumbotron--content">
+      <img src="<?php echo $upload_dir['baseurl']?>/2019/03/homeAwayLogo-1.jpg" alt="HomeGoods Logo" class="img-responsive">
+      <p>Get Inspired.</p>
+      <p>Find Products.</p>
+      <p>Save on Deals.</p>
+      <div>
+        <button class="btn btn-lg btn-primary button-fullwidth">SHOP NOW</button>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Shop By Department</h3>
+  <?php echo do_shortcode("[product_categories]"); ?>
+</div>
+
+<div class="container">
+  <h3>Featured Items</h3>
+  <?php echo do_shortcode("[featured_products per_page='12' columns='4' orderby='date' order='ASC']"); ?>
+</div>
 <?php
 get_footer();
