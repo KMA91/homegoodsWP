@@ -13,16 +13,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="<?php bloginfo('charset'); ?>"/>
         <link rel="profile" href="http://gmpg.org/xfn/11"/>
-        <?php if ( is_singular() && pings_open() ) { 
+        <?php if ( is_singular() && pings_open() ) {
         echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
        } ?>
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <?php wp_head(); ?>
     </head>
 <?php
 $pasal_ecommerce_settings = pasal_ecommerce_get_theme_options();
 if (in_array('layout-pro/layout-pro.php', apply_filters('active_plugins', get_option('active_plugins')))) {
 $breadcrumb_metabox = get_post_meta(get_the_ID(),'_my_custom_field', true); }
-?> 
+?>
 
 <body <?php body_class('woocommerce'); ?>>
 <div id="page">
@@ -99,7 +100,7 @@ $breadcrumb_metabox = get_post_meta(get_the_ID(),'_my_custom_field', true); }
       $layout_pro_customizer = layout_pro_customizer_get_theme_options();
         $default_slider = $layout_pro_customizer['layout_pro_sliderradiobox'];
     if (is_page_template('page-templates/home-template.php')) {
-        
+
         if($default_slider == 'default_slider'){
         layout_pro_default_theme_slider();
     }}

@@ -93,7 +93,7 @@ if (!function_exists('pasal_ecommerce_setup')) :
          * Making the theme WooCommerce compatible
          */
 
-        
+
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
     }
@@ -348,7 +348,7 @@ if ( ! function_exists ( 'pasal_ecommerce_demo_import_files' ) ) {
                 'import_notice' => __( 'After you import this demo, you will have to choose the Home Page separately from customizer.', 'pasal-ecommerce' ),
                 'preview_url' => esc_url('https://demo.codethemes.co/pasal-lite/'),
             ),
-            
+
              array(
                 'import_file_name' => __('Electronic Store', 'pasal-ecommerce'),
                 'import_file_url' => esc_url('https://codethemes.co/wp-content/uploads/theme_updates/demo_content/pasal/pro_demo1/content1.xml'),
@@ -388,7 +388,7 @@ if ( ! function_exists ( 'pasal_ecommerce_demo_import_files' ) ) {
                 'import_notice' => __( 'After you import this demo, you will have to choose the Home Page separately from customizer.', 'pasal-ecommerce' ),
                 'preview_url' => esc_url('https://demo.codethemes.co/pasal-ecommerce4/'),
             ),
-           
+
         );
     }
 
@@ -412,7 +412,7 @@ if ( ! function_exists ( 'pasal_ecommerce_demo_import_files_pro' ) ) {
                 'import_notice' => __( 'After you import this demo, you will have to choose the Home Page separately from customizer.', 'pasal-ecommerce' ),
                 'preview_url' => esc_url('https://demo.codethemes.co/pasal-lite/'),
             ),
-           
+
         );
     }
 
@@ -428,3 +428,10 @@ function pasal_ecommerce_existing_currency_symbol( $currency_symbol, $currency )
      }
      return $currency_symbol;
 }
+
+// Kevin // 3/19/19
+// Add our own custom styling
+// This can be altered in the
+// pasal theme's root directory
+
+wp_enqueue_style ('custom-styling', get_template_directory_uri().'/custom.css');
